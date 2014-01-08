@@ -51,7 +51,7 @@ module MinecraftSyncedMap
       if settings[:map_bucket]
         echo_command "boto-rsync #{boto_opts} -g public-read #{settings[:map_directory]} s3://#{settings['map_bucket']}/#{settings['map_key']}"
       elsif settings[:map_rsync_domain]
-        echo_command_sys "rsync -r -vv -z -e ssh #{settings[:map_directory]} #{settings[:map_rsync_domain]}:#{settings[:map_rsync_path]}"
+        echo_command_sys "rsync -r -vv --size-only --modify-window=2 -z -e ssh #{settings[:map_directory]} #{settings[:map_rsync_domain]}:#{settings[:map_rsync_path]}"
       end
     end
 
