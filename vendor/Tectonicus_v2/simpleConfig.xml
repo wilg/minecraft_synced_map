@@ -1,0 +1,35 @@
+<tectonicus version="2">
+<!--
+	This sample configuration demonstrates the most commonly used configuration settings.
+	It will render a map of the entire world at daytime with all markers shown.
+
+	You only need to change the "worldDir" path below to your Minecraft world folder,
+	and the "outputDir" path if desired. Increasing the "closestZoomSize" to "24" or "48" will
+	save you disk space, but with less detail available when zoomed all the way in.
+	
+	See exampleConfig.xml for a sample with more options,
+	or fullConfig.xml for all the available settings and their defaults.
+-->
+
+	<config
+		outputDir="/Volumes/Big Hard Drive/tectonicus-output"
+		numZoomLevels="10"
+		eraseOutputDir="true"
+
+	/>
+
+	<map
+		name="My World Map"
+		worldDir="/Users/wil/Desktop/maps/world"
+		dimension="terra"
+		closestZoomSize="40"
+	>
+
+		<layer
+			name="Day"
+			lighting="day"
+			renderStyle="normal"
+		/>
+	</map>
+
+</tectonicus>

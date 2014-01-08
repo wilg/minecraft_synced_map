@@ -1,0 +1,20 @@
+<tectonicus version="2">
+	<config
+		outputDir="mcmapsync_cache/map"
+		numZoomLevels="10"
+	/>
+	<map
+		name="My World Map"
+		worldDir="mcmapsync_cache/world"
+		dimension="terra"
+		closestZoomSize="40"
+	>
+		<layer
+			name="Day"
+			lighting="day"
+			imageFormat="jpg"
+			imageCompressionLevel="0.8"
+			renderStyle="normal"
+		/>
+	</map>
+</tectonicus>

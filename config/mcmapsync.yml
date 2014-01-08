@@ -1,0 +1,7 @@
+---
+aws_access_key_id: xxxxxxxxxxxx
+aws_secret_access_key: xxxxxxxxxxxx
+world_bucket: my-world-bucket-name
+world_key: opt/msm/servers/default/worldstorage/world
+map_bucket: my-map-bucket-name
+map_key: map
