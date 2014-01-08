@@ -14,6 +14,7 @@ module MinecraftSyncedMap
     desc 'pull', "pull map from server"
     def pull
       MinecraftSyncedMap::Base.set_settings!
+      MinecraftSyncedMap::Base.download_world
       MinecraftSyncedMap::Base.download_map
     end
 
