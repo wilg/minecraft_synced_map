@@ -11,19 +11,19 @@ renders["overworld_day"] = {
     "optimizeimg" : 1
 }
 
-renders["overworld_night"] = {
+renders["overworld_reverse"] = {
     "world": "world",
-    "title": "Overworld Night",
-    "rendermode": smooth_night,
+    "title": "Overworld (reverse)",
+    "rendermode": smooth_lighting,
     "dimension": "overworld",
-    "northdirection" : "upper-right",
+    "northdirection" : "lower-left",
     "optimizeimg" : 1
 }
 
 renders["nether"] = {
     "world": "world",
     "title": "Nether",
-    "rendermode": nether,
+    "rendermode": nether_lighting,
     "dimension": "nether",
     "northdirection" : "upper-right",
     "optimizeimg" : 1
