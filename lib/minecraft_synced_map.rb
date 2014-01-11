@@ -50,14 +50,18 @@ module MinecraftSyncedMap
       if settings[:map_bucket]
         echo_command "boto-rsync #{boto_opts} s3://#{settings['map_bucket']}/#{settings['map_key']} #{settings[:map_directory].shellescape}"
       elsif settings[:map_rsync_domain]
-        echo_command_sys "rsync -r -vv --size-only --modify-window=2 -z -e ssh #{settings[:map_rsync_domain]}:#{settings[:map_rsync_path]}/map #{settings[:cache_directory]}"
+        echo_command_sys "rsync -r -vv --size-only --modify-window=2 -z -e ssh #{settings[:map_rsync_domain]}:#{settings[:map_rsync_path]}map #{settings[:cache_directory]}"
       end
+    rescue
+      puts "Couldn't download existing map...".red
     end
 
     def self.generate_map
       puts "Generating map...".yellow
       # echo_command "java -Xms2048M -Xmx2048M -jar #{settings[:tectonicus_jar]} config=#{settings[:tectonicus_config]}"
       echo_command "WORLD_DIR=#{settings[:world_directory].shellescape} MAP_DIR=#{settings[:map_directory].shellescape} python #{settings[:overviewer_py]} --config=#{settings[:overviewer_config]} -v"
+      puts "Generating markers...".yellow
+      echo_command "WORLD_DIR=#{settings[:world_directory].shellescape} MAP_DIR=#{settings[:map_directory].shellescape} python #{settings[:overviewer_py]} --config=#{settings[:overviewer_config]} --genpoi"
     end
 
     def self.upload_map
