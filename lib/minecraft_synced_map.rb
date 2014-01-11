@@ -60,6 +60,9 @@ module MinecraftSyncedMap
       puts "Generating map...".yellow
       # echo_command "java -Xms2048M -Xmx2048M -jar #{settings[:tectonicus_jar]} config=#{settings[:tectonicus_config]}"
       echo_command "WORLD_DIR=#{settings[:world_directory].shellescape} MAP_DIR=#{settings[:map_directory].shellescape} python #{settings[:overviewer_py]} --config=#{settings[:overviewer_config]} -v"
+    end
+
+    def self.generate_pois
       puts "Generating markers...".yellow
       echo_command "WORLD_DIR=#{settings[:world_directory].shellescape} MAP_DIR=#{settings[:map_directory].shellescape} python #{settings[:overviewer_py]} --config=#{settings[:overviewer_config]} --genpoi"
     end

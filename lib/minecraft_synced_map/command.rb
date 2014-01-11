@@ -8,6 +8,7 @@ module MinecraftSyncedMap
     def update
       pull
       build
+      build_poi
       push
     end
 
@@ -22,6 +23,12 @@ module MinecraftSyncedMap
     def build
       MinecraftSyncedMap::Base.set_settings!
       MinecraftSyncedMap::Base.generate_map
+    end
+
+    desc 'build_poi', "build poi cache"
+    def build_poi
+      MinecraftSyncedMap::Base.set_settings!
+      MinecraftSyncedMap::Base.generate_pois
     end
 
     desc 'push', "push map to server"
