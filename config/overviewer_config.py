@@ -15,6 +15,11 @@ def chestFilter(poi):
     if poi['id'] == "Chest":
         return ("Chest", "Chest with %d items" % len(poi['Items']))
 
+
+def diamondFilter(poi):
+    if poi['id'] == "Diamond":
+        return ("Diamond")
+
 markers = [
     dict(name="Signs", filterFunction=signFilter),
     dict(name="Players", filterFunction=playerIcons, checked=True)
