@@ -40,6 +40,16 @@ renders["overworld_reverse"] = {
     "optimizeimg" : 1
 }
 
+renders["caves"] = {
+    "world": "world",
+    "title": "Caves",
+    "rendermode": cave,
+    "dimension": "overworld",
+    "northdirection" : "lower-left",
+    'markers': markers,
+    "optimizeimg" : 1
+}
+
 renders["nether"] = {
     "world": "world",
     "title": "Nether",
