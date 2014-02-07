@@ -50,7 +50,7 @@ module MinecraftSyncedMap
       if settings[:map_bucket]
         echo_command "boto-rsync #{boto_opts} s3://#{settings['map_bucket']}/#{settings['map_key']} #{settings[:map_directory].shellescape}"
       elsif settings[:map_rsync_domain]
-        echo_command_sys "rsync -r -vv --size-only --modify-window=2 -z -e ssh #{settings[:map_rsync_domain]}:#{settings[:map_rsync_path]}map #{settings[:cache_directory]}"
+        echo_command_sys "rsync -r -vv --size-only --modify-window=2 -z -e ssh #{settings[:map_rsync_domain]}:#{settings[:map_rsync_path]}map #{settings[:cache_directory].shellescape}"
       end
     rescue
       puts "Couldn't download existing map...".red
