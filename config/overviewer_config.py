@@ -72,7 +72,8 @@ renders['biome_overlay'] = {
     "northdirection" : "lower-left",
     'title': "Biomes",
     'overlay': ['overworld_reverse'],
-    "optimizeimg" : 1
+    "optimizeimg" : 1,
+    "dimension": "overworld"
 }
 
 renders['slime_overlay'] = {
@@ -81,7 +82,8 @@ renders['slime_overlay'] = {
     "northdirection" : "lower-left",
     'title': "Slime",
     'overlay': ['overworld_reverse'],
-    "optimizeimg" : 1
+    "optimizeimg" : 1,
+    "dimension": "overworld"
 }
 
 renders['mineral_overlay'] = {
@@ -90,7 +92,8 @@ renders['mineral_overlay'] = {
     "northdirection" : "lower-left",
     'title': "Minerals",
     'overlay': ['overworld_reverse'],
-    "optimizeimg" : 1
+    "optimizeimg" : 1,
+    "dimension": "overworld"
 }
 
 outputdir = os.environ['MAP_DIR']
